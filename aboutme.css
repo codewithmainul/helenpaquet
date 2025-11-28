@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    color: #503030;
+    background-color: #f0efeb;
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: #e0e0d4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.left-header-box{
+    display: flex;
+    flex-direction: column;
+    color: #503030;
+    letter-spacing: 1px;
+}
+.Designer-name{
+    font-size: 30px;
+    font-weight: 600px;
+}
+.menu-bar ul{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+.menu-bar ul .aboutme{
+    border: 1px solid grey;
+    border-radius: 10px;
+    min-width: 90px;
+    padding: 2px;
+    height: auto;
+    text-align: center;
+}
+/*--section 1 start here--*/
+.section1{
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    background-color: #f0efeb;
+    height: calc(100vh - 120px);
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.left{
+    align-items: center;
+    justify-content: stretch;
+}   
+.left .big-image{
+    height: 100%;
+    min-height: 500px;
+}
+.left img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.mid{
+    align-items: center;
+    padding: 50px;
+    justify-content: space-between;
+}
+.mid .about-title{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #2f2222;
+}
+.mid .about-text{
+    width: 100%;
+    line-height: 1.75;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.about-text::after{
+  content: "";
+  display: inline-block;
+  width: 100%; /* trick so last line won't be force-justified too wide */
+  height: 0;
+}
+.right{
+    align-items: start;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.footer-strip{
+    height: 40px;
+    background-color: black;
+    color: #fff;
+    padding: 0px 20px;
+    text-wrap: norwrap;
+    white-space: nowrap;
+    padding: 8px 0px;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
