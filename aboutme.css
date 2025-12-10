@@ -19,14 +19,16 @@ ul{
     list-style: none;
 }
 
+/* --- Global adjustments for mobile compatibility (start) --- */
+
 .header{
-    height: 80px;
+    height: auto;
     width: 100%;
     background-color: #e0e0d4;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
     position: relative;
     z-index: 10;
     border-top-left-radius: 20px;
@@ -39,14 +41,15 @@ ul{
     letter-spacing: 1px;
 }
 .Designer-name{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600px;
 }
 .menu-bar ul{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 25px;
-    font-size: 11px;
+    gap: 15px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.5px;
 }
@@ -58,32 +61,38 @@ ul{
     height: auto;
     text-align: center;
 }
-/*--section 1 start here--*/
+
+/*--Main Section started from here--*/
+
 .section1{
-    flex-grow: 1;
     display: flex;
-    gap: 20px;
-    padding: 0px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
     background-color: #f0efeb;
-    height: calc(100vh - 120px);
+    height:auto;
+    width: 100%;
 }
 .col{
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 .left{
     align-items: center;
-    justify-content: stretch;
+    justify-content: center;
+    padding: 10px;
 }   
 .left .big-image{
     height: 100%;
-    min-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .left img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 .mid{
     align-items: center;
@@ -94,7 +103,7 @@ ul{
     font-family: 'Playfair Display', serif;
     text-align: center;
     font-size: 80px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     font-weight: 700;
     color: #2f2222;
 }
@@ -104,29 +113,127 @@ ul{
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
-
-}
-.about-text::after{
-  content: "";
-  display: inline-block;
-  width: 100%; /* trick so last line won't be force-justified too wide */
-  height: 0;
+    margin-top: 50px;
 }
 .right{
-    align-items: start;
+    align-items: center;
     padding: 50px;
-    justify-content: space-between;
+}
+
+.right .image-description{
+    font-family: sans-serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+.small-image img{
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
 .footer-strip{
     height: 40px;
+    width: 100%;
     background-color: black;
     color: #fff;
-    padding: 0px 20px;
+    padding: 8px 20px;
     text-wrap: norwrap;
     white-space: nowrap;
-    padding: 8px 0px;
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+}
+
+/*--Tablet Style (e.g. 768px or up)--*/
+
+@media screen and (min-width:768px){
+.header{
+    height: auto;
+    padding: 10px 10px;
+}
+.left-header-box{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    color: #503030;
+    letter-spacing: 1px;
+}
+.Designer-name{
+    font-size: 24px;
+}
+.menu-bar ul{
+    gap: 15px;
+    font-size: 11px;
+}
+.left .big-image{
+    height: 100%;
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.left img{
+    height: 100%;;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+} 
+
+/*--Desktop Style (e.g. 1024 px and up)--*/
+
+@media screen and (min-width:1024px){
+.Designer-name{
+    font-size: 30px;
+}
+.menu-bar ul{
+    gap: 20px;
+    font-size: 11px;
+}
+.section1{
+    height: calc(100vh - 120px);
+    gap: 0px;
+}
+.col{
+    flex-direction: row;
+}
+
+.left{
+    height: 100%;
+    flex: 1;
+}   
+.mid{
+    height: 100%;
+    flex: 1;
+    padding: 20px;
+    flex-direction: column;
+}
+.right{
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+}
+.left .big-image{
+    height: 100%;
+    max-height: calc(100vh - 120px);
+}
+.mid .about-title{
+    font-size: 70px;
+    margin-top: 50px;
+}
+.mid .about-text{
+    margin-bottom: 50px;
+}
+.right .image-description{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
 }
