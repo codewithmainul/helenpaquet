@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* --- Global adjustments for mobile compatibility (start) --- */
+
+
 body {
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
@@ -19,16 +23,16 @@ ul {
   list-style: none;
 }
 .full-page-container{
-  height: 100vh;
+  min-height: 100vh;
 }
 .header {
-  height: 80px;
+  height: auto;
   width: 100%;
   background-color: #e0e0d4;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   z-index: 10;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -42,14 +46,15 @@ ul {
   letter-spacing: 1px;
 }
 .Designer-name {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600px;
 }
 .menu-bar ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 25px;
-  font-size: 11px;
+  gap: 15px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
@@ -65,45 +70,174 @@ ul {
 /*--1st page start here--*/
 
 .main-container{
-  height: 100vh;
+  min-height: 100vh;
 }
 .page-1{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  background-color: aqua;
-  height: calc(100vh - 80px);
+  height: auto;
   padding: 10px;
 }
 .container-1{
-  background-color: aquamarine;
-  height: 100%;
-  flex-basis: 50%;
-}
-.container-2{
-  background-color: rgb(139, 209, 186);
-  height: 100%;
-  flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  height:auto;
+  flex-basis: 100%;
+  padding: 10px 20px;
+}
+.container-1 h1{
+  font-family: "Libre Baskerville", serif;
+  font-size: 60px;
+  letter-spacing: 1px;
+}
+.container-1 p{
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-top: 30px;;
+  width: 100%;
+}
+.container-1 a{
+  margin-top: 30px;
+  width: 100%;
+}
+.cta-button{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container-2{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .container-2 .box-1{
-  background-color: aliceblue;
-  height: 30%;
-  width: 30%;
-  margin-top: 20px;
-  margin-left: 60%;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 30px auto;
+}
+.container-2 .box-1 img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .container-2 .box-2{
-  background-color: aliceblue;
-  height: 40%;
-  width: 40%;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 30px auto;
+}
+.container-2 .box-2 img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .container-2 .box-3{
-  position:relative;
-  background-color: rgb(3, 46, 83);
-  height: 40%;
-  width: 40%;
-  top: -40px ;
-  left: 30%;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 30px auto;
 }
+.container-2 .box-3 img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* --- Tablet Styles (e.g., 768px and up) --- */
+
+
+@media screen and (min-width: 768px){
+  .header{
+    height: 80px;
+    width: 100%;
+  }
+  .left-header-box .Designer-name{
+    font-size: 30px;
+  }
+  .menu-bar ul{
+    gap: 25px;
+    font-size: 11px;
+  }
+  .page-1{
+    flex-direction: row;
+    height: calc(100vh-80px);
+    flex-wrap: nowrap;
+  }
+  .container-1, .container-2{
+    flex-basis: 50%;
+  }
+  .container-1{
+    padding: 20px 40px;
+  }
+  .container-1 h1{
+    font-size: 60px;
+    margin-top: 50px;
+  }
+  .container-1 p{
+    font-size: 20px;
+    margin-top: 50px;
+  }
+  .container-1 a{
+  margin-top: 50px;
+  width: 250px;
+}
+.container-2 .box-1{
+  display: block;
+  height: 200px;
+  width: 200px;
+}
+.container-2 .box-2 {
+    display: block;
+    height: 200px;
+    width: 200px;
+  }
+  .container-2 .box-3 {
+    display: block ; /* Still hide the third, tricky one */
+    height: 200px;
+    width: 200px;
+  }
+  }
+
+
+  /* --- Desktop Styles (e.g., 1024px and up) --- */
+@media screen and (min-width: 1024px){
+  .container-1 h1{
+    font-size: 100px;
+    margin-top: 50px;
+  }
+ .container-2 .box-1{
+  display: block;
+  height: 250px;
+  width: 250px;
+  margin-left: 50%;
+}
+.container-2 .box-2 {
+    display: block;
+    height: 300px;
+    width: 300px;
+    margin-top: -50px;
+    margin-left: 30px;
+  }
+  .container-2 .box-3 {
+    display: block ; /* Still hide the third, tricky one */
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    top: 350px;
+    left: 300px;
+  }
+  }
